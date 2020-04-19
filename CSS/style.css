@@ -1,0 +1,63 @@
+/*Reset*/
+a,abbr,acronym,address,applet,article,aside,audio,b,blockquote,big,body,center,canvas,caption,cite,code,command,datalist,dd,del,details,dfn,dl,div,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,keygen,label,legend,li,meter,nav,object,ol,output,p,pre,progress,q,s,samp,section,small,span,source,strike,strong,sub,sup,table,tbody,tfoot,thead,th,tr,tdvideo,tt,u,ul,var{background:transparent;font-size:100%;border:0 none;margin:0;padding:0;vertical-align:baseline;}body{display:flex;flex-flow:column;}
+
+/*Général*/
+body{
+    background-color: beige;
+}
+
+/*Navigation*/
+nav{
+    width: 100%;
+    background-color: darkgrey;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+}
+nav h1{
+    margin: auto 10em auto 0;
+    font-size: 25px;
+}
+nav h1:hover, nav li:hover{
+    color: #fff;
+}
+nav ul{
+    margin: auto 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+nav li{
+    list-style: none;
+    font-size: 20px;
+    padding: 0 1em;
+}
+/*Header*/
+header{
+    height: 23em;
+    margin: 2em;
+}
+header img{
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/*Footer*/
+footer{
+    background-color: darkgrey;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+}
+footer p{
+    margin: auto;
+    font-size: 15px;
+    font-weight: 800;
+}
+
