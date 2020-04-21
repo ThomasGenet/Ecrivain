@@ -3,13 +3,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,blockquote,big,body,center,c
 
 /*Général*/
 body{
-    background-color: beige;
+    background-color: #fff;
 }
 
 /*Navigation*/
 nav{
     width: 100%;
-    background-color: darkgrey;
+    background-color: #A7B3A1;
     height: 3em;
     display: flex;
     justify-content: center;
@@ -47,7 +47,7 @@ header img{
 
 /*Footer*/
 footer{
-    background-color: darkgrey;
+    background-color: #A7B3A1;
     position: absolute;
     bottom: 0;
     width: 100%;
