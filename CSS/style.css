@@ -4,6 +4,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,blockquote,big,body,center,c
 /*Général*/
 body{
     background-color: #fff;
+    position: relative;
 }
 
 /*Navigation*/
@@ -32,23 +33,47 @@ nav li{
     font-size: 20px;
     padding: 0 1em;
 }
+nav li a {
+    text-decoration: none;
+    color: #000;
+}
+nav li a:hover{
+    color: #fff;
+}
 /*Header*/
 header{
     height: 23em;
     margin: 2em;
 }
 header img{
-    width: 50%;
-    height: 100%;
+    width: 40%;
+    height: 60%;
     margin: auto;
     display: flex;
     justify-content: center;
 }
-
+/*Chapitre*/
+#chapitre{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin: 2em auto;
+    position: relative;
+}
+.chap{
+    width: 25%;
+    border: 1px solid #A7B3A1;
+    margin: 1em;
+}
+.chap h1, .chap p{
+    display: flex;
+    justify-content: center;
+    padding: 0.2em;
+}
 /*Footer*/
 footer{
-    /*background-color: #A7B3A1;*/
-    background-color: blueviolet;
+    background-color: #A7B3A1;
     position: absolute;
     bottom: 0;
     width: 100%;
