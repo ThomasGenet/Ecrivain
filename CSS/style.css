@@ -16,8 +16,13 @@ nav{
     justify-content: center;
 }
 nav h1{
-    margin: auto 10em auto 0;
+    margin: auto 1em;
+}
+nav h1 a{
     font-size: 25px;
+    text-decoration: none;
+    color: #000;
+    
 }
 nav h1:hover, nav li:hover{
     color: #fff;
@@ -36,8 +41,27 @@ nav li{
 nav li a {
     text-decoration: none;
     color: #000;
+    display: block;
 }
 nav li a:hover{
+    color: #fff;
+}
+#iconlog{
+    width: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+}
+#iconlog:hover{
+    color: #fff;
+}
+#login{
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    margin: auto 1em auto 0em;
+    padding: 0;
+}
+#login:hover{
     color: #fff;
 }
 /*Header*/
@@ -74,19 +98,16 @@ header img{
 /*Footer*/
 footer{
     background-color: #A7B3A1;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 2em;
     display: flex;
     justify-content: center;
+    margin-top: 2em;
 }
 footer p{
     margin: auto;
     font-size: 15px;
     font-weight: 800;
 }
-/*Commit test*/
-/*test commit 2*/ 
-/*test commit 3*/
-/*test commit 4*/  
