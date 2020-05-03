@@ -4,15 +4,18 @@
 <head>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/stylelog.css">
-
+    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapitre</title>
+    <?php include('../PHP/index.php');?>
 </head>
 
 <body>
+    
     <!--Navigation-->
+   
     <nav>
         <h1> <a href="../index.html">Jean Forteroche</a> </h1>
         <ul>
@@ -27,23 +30,34 @@
     </nav>
     <!--Log in-->
     <section id="log">
-        <div class="login">
+        <form  method="POST" class="login">
             <h2>Connexion</h2>
-            <input type="text" name="login" class="pseudo" placeholder="Pseudo">
-            <input type="text" name="mdp" class="mdp" placeholder="Mot de passe">
+            <label for="pseudo_member">
+                <input type="text" name="pseudo_member" class="pseudo" placeholder="Pseudo"/>
+            </label>
+            <label for="pass_member">
+                <input type="password" name="pass_member" class="mdp" placeholder="Mot de passe"/>
+            </label>
             <p>Mot de passe oublié ?</p>
             <button type="submit">Se connecter</button>
-        </div>
+        </form>
     <!--Log out-->
-        <div class="login">
+        <form action="../PHP/index.php" method="POST"  class="login">
             <h2>Inscription</h2>
-            <input type="text" name="login" class="pseudo" placeholder="Pseudo">
-            <input type="text" name="login" class="mail" placeholder="Mail">
-            <input type="text" name="mdp" class="mdp" placeholder="Mot de passe">
-            <input type="text" name="mdp" class="mdp" placeholder="Confirmer le mot de passe">
-            <button type="submit">S'inscrire</button>
-        </div>
-
+            <label for="pseudo_member"/> 
+                <input type="text" name="pseudo_member" class="pseudo" placeholder="Pseudo">
+            </label>
+            <label for="mail_member"> 
+                <input type="email" name="mail_member" class="mail" placeholder="Mail">
+            </label>
+            <label for="pass_member">
+                <input type="password" name="pass_member" class="mdp" placeholder="Mot de passe">
+            </label>
+            <input type="submit" value="S'inscrire"/>
+            
+            
+        </form>
+        
     </section>
     <!--Footer-->
     <footer>
@@ -51,5 +65,6 @@
     </footer>
 
 </body>
+
 
 </html>
