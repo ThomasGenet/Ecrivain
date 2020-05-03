@@ -11,7 +11,8 @@ catch(Exception $e)
         die('Erreur : '.$e->getMessage());
 }
 // Vérification de la validité des informations
-
+$pseudo = htmlspecialchars($_POST['pseudo_member']);
+$mail = htmlspecialchars($_POST['mail_member']);
 // Hachage du mot de passe
 $pass_hache = password_hash($_POST['pass_member'], PASSWORD_DEFAULT);
 
@@ -21,6 +22,5 @@ $req->execute(array(
     'pseudo_member' => $pseudo,
     'pass_member' => $pass_hache,
     'mail_member' => $mail));
-    echo 'info ok';
     
 ?>
