@@ -34,7 +34,7 @@ input{
     border: 1px solid #A7B3A1;
     border-radius: 0.5em;
 }
-button{
+.button{
     border: 1px solid #f7fff2;
     background-color: #f7fff2;
     border-radius: 0.5em;

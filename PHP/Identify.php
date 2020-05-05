@@ -1,4 +1,3 @@
-
 <?php 
 // Connexion à la base de données
 try
@@ -22,5 +21,5 @@ $req->execute(array(
     'pseudo_member' => $pseudo,
     'pass_member' => $pass_hache,
     'mail_member' => $mail));
-    
+    echo 'connecté';
 ?>
