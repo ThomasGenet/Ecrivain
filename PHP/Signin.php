@@ -30,11 +30,9 @@ else
         session_start();
         $_SESSION['id_member'] = $resultat['id_member'];
         $_SESSION['pseudo_member_signin'] = $pseudo_signin;
-        echo 'Vous êtes connecté !';
+        //echo 'Vous êtes connecté !';
     }
     else {
         echo 'Mauvais identifiant ou mot de passe !';
     }
 }
-
-?>

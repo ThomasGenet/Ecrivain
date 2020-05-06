@@ -1,4 +1,5 @@
 <?php 
+function registration(){
 // Connexion à la base de données
 try
 {
@@ -21,5 +22,14 @@ $req->execute(array(
     'pseudo_member' => $pseudo,
     'pass_member' => $pass_hache,
     'mail_member' => $mail));
-    echo 'connecté';
-?>
+    
+    if (isset($_SESSION['pseudo_member_signin']))
+        {
+            echo 'Bonjour ' . $_SESSION['pseudo_member_signin'] . 'ok';
+            //header('Location: ./chapitre.html');
+        }
+    
+}
+$req = registration();
+
+
