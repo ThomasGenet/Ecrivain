@@ -2,8 +2,11 @@
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/stylelog.css">
+    <link rel="stylesheet" href="../Public/CSS/style.css">
+    <link rel="stylesheet" href="../Public/CSS/styleadmin.css">
+    <link rel="stylesheet" href="../Public/CSS/stylechapitre.css">
+    <link rel="stylesheet" href="../Public/CSS/stylelog.css">
+    <link rel="stylesheet" href="../Public/fonts/fontawesome-free-5.13.0-desktop/svgs/solid/">
 
 
     <meta charset="UTF-8">
@@ -30,18 +33,7 @@
 
     <!--Navigation-->
 
-    <nav>
-        <h1> <a href="../index.html">Jean Forteroche</a> </h1>
-        <ul>
-            <li> <a href="../index.html">Accueil</a> </li>
-            <li>L'auteur</li>
-            <li id="Chapitres"> <a href="./chapitre.html">Chapitres</a> </li>
-        </ul>
-        <a href="login.html">
-            <img src="../fonts/fontawesome-free-5.13.0-desktop/svgs/solid/sign-in-alt.svg" alt="icon log" id="iconlog">
-        </a>
-        <a href="login.html" id="login" >Log-in</a>
-    </nav>
+    <?php include('./_header.php') ?>
     <!--Log in-->
     <section id="log">
         <form action="../PHP/Signin.php" method="POST" class="login">

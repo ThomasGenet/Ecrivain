@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="stylesheet" href="./fonts/fontawesome-free-5.13.0-desktop/svgs/solid/">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jean Forteroche</title>
-</head>
-
-<body>
-    <!--Navigation-->
-    <nav>
-        <h1> <a href="index.html">Jean Forteroche</a> </h1>
-        <ul>
-            <li> <a href="index.html">Accueil</a> </li>
-            <li>L'auteur</li>
-            <li> <a href="./html/chapitre.html">Chapitres</a> </li>
-        </ul>
-        <a href="./html/login.html">
-            <img src="./fonts/fontawesome-free-5.13.0-desktop/svgs/solid/sign-in-alt.svg" alt="icon log" id="iconlog">
-        </a>
-        <a href="./html/login.html" id="login">Log-in</a>
-    </nav>
-    <!--Header-->
-    <header>
-        <img src="./Img/Header.png" alt="">
-    </header>
-    <!--Extrait des chapitres-->
-    <section id="chapitre">
+<section id="chapitre">
         <figure class="chap">
             <h1>Chapitre 1</h1>
             <p>
@@ -65,11 +34,3 @@
 
 
     </section>
-    <!--Footer-->
-    <footer>
-        <p>Copyright Thomas Genet Openclassrooms 2020</p>
-    </footer>
-
-</body>
-
-</html>

@@ -1,13 +1,5 @@
 <?php 
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=ecrivain;charset=utf8', 'root', 'root');
-}
-
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-}
+require ('../Model/bdd.php');
 
 $pseudo_signin = htmlspecialchars($_POST['pseudo_member_signin']);
 //  Récupération de l'utilisateur et de son pass hashé
