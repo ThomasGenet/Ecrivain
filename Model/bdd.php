@@ -1,10 +1,14 @@
 <?php
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=ecrivain;charset=utf8', 'root', 'root');
-}
+//Je me connecte à la base de donnée
 
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
+function connect(){
+        try
+        {
+                $bdd = new PDO('mysql:host=localhost;dbname=ecrivain;charset=utf8', 'root', 'root');
+        }
+        
+        catch(Exception $e)
+        {
+                die('Erreur : '.$e->getMessage());
+        }
 }

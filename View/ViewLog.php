@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <link rel="stylesheet" href="../Public/CSS/style.css">
-    <link rel="stylesheet" href="../Public/CSS/styleadmin.css">
-    <link rel="stylesheet" href="../Public/CSS/stylechapitre.css">
-    <link rel="stylesheet" href="../Public/CSS/stylelog.css">
-    <link rel="stylesheet" href="../Public/fonts/fontawesome-free-5.13.0-desktop/svgs/solid/">
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapitre</title>
     <?php 
         session_start();
 
-    include('../PHP/Signin.php');
-    include('../PHP/Identify.php');
-    include('../PHP/Logout.php');
+    include('../Controller/Signin.php');
+    include('../Controller/Identify.php');
+    include('../Controller/Logout.php');
   
         if (isset($_SESSION['pseudo_member']))
         {
@@ -27,9 +14,6 @@
     
     ?>
 
-</head>
-
-<body>
 
     <!--Navigation-->
 

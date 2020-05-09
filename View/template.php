@@ -1,3 +1,4 @@
+<!--Je suis le prochain fichier template on passera par moi pour afficher les différentes vues-->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,8 +13,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?= $title ?> </title>
 </head>
+
 <body>
     <?= $content ?>
+
+
+
+    <footer>
+        <p>Copyright Thomas Genet Openclassrooms 2020</p>
+    </footer>
 </body>
 
 </html>

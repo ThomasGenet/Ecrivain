@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <link rel="stylesheet" href="../Public/CSS/style.css">
-    <link rel="stylesheet" href="../Public/CSS/stylechapitre.css">
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapitre</title>
-</head>
-
-<body>
-    <!--Navigation-->
-    <?php require('./_header.php') ?>
-    <!--Header-->
-    <header>
+ <?php $title = 'Accueil'; ?>    
+ <?php ob_start();?>
+     <div>
         <h1>Chapitre 1</h1>
         <p>Vous êtes sur la page du chapitre 1</p>
-    </header>
+    </div>
     <!--Chapitre entier-->
     <section id="completchap">
         <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis dicta aut ex corrupti ipsum blanditiis
@@ -40,8 +25,5 @@
         </div>
 
     </section>
-    <!--Footer-->
-    <?php require('./_footer.php') ?>
-</body>
+<?php $content = ob_get_clean()?>
 
-</html>

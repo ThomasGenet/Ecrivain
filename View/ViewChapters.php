@@ -1,3 +1,4 @@
+<!--Grâce à moi on affiche la section chapitre de la page accueil-->
 <section id="chapitre">
         <figure class="chap">
             <h1>Chapitre 1</h1>

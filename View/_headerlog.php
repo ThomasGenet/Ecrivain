@@ -1,6 +1,5 @@
-
-    <!--Navigation-->
-    <nav>
+<!--Je suis la navigation si on est connecté controller header.php-->
+<nav>
         <h1> <a href="../index.html">Jean Forteroche</a> </h1>
         <ul>
             <li> <a href="../index.html">Ajouter un chapitre</a> </li>
@@ -14,13 +13,6 @@
             </a>
             <a href="./pagelogin.php" id="login">Déconnexion</a>
         </div>
-    </nav>
-    <!--Header-->
-    <header>
-        <h1>Mon tableau de bord</h1>
-    </header>
-    
+</nav>
 
-</body>
-
-</html>
+<?php //require ('../Controller/header.php') ?>
