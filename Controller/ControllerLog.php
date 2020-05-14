@@ -1,17 +1,19 @@
 <?php 
-session_start();
 
 function registration(){
-
+    include ('../Model/Database.php');
+    //echo ('registration');
 // Vérification de la validité des informations
 $pseudo = htmlspecialchars($_POST['pseudo_member']);
 $mail = htmlspecialchars($_POST['mail_member']);
+$admin = 0;
 // Hachage du mot de passe
 $pass_hache = password_hash($_POST['pass_member'], PASSWORD_DEFAULT);
 
 // Insertion
-$req = $bdd->prepare('INSERT INTO membre(pseudo_member, pass_member, mail_member, date_inscription) VALUES(:pseudo_member, :pass_member, :mail_member, CURDATE())');
+$req = $bdd->prepare('INSERT INTO membre(admin_member,pseudo_member, pass_member, mail_member, date_inscription) VALUES (:admin_member,:pseudo_member, :pass_member, :mail_member, CURDATE())');
 $req->execute(array(
+    'admin_member' => $admin,
     'pseudo_member' => $pseudo,
     'pass_member' => $pass_hache,
     'mail_member' => $mail));
@@ -26,6 +28,7 @@ $req->execute(array(
 
 //Se connecter
 function connect(){
+    include ('../Model/Database.php');
     
     $pseudo_signin = htmlspecialchars($_POST['pseudo_member_signin']);
     //  Récupération de l'utilisateur et de son pass hashé
@@ -60,7 +63,6 @@ function connect(){
 //Se déconnecter
 function logout(){
  //A finir !!!!!!!!!!! 
-
 
 // Suppression des variables de session et de la session
 $_SESSION = array();

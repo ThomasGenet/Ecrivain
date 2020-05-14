@@ -1,4 +1,4 @@
-<!--Je suis le prochain fichier template on passera par moi pour afficher les différentes vues-->
+<!--Je suis le fichier template on passera par moi pour afficher les différentes vues-->
 <!DOCTYPE html>
 <html lang="fr">
 

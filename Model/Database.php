@@ -10,6 +10,6 @@
         {
                 die('Erreur : '.$e->getMessage());
         }
-        echo 'connecté bdd';
+        
 
 

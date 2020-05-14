@@ -4,33 +4,34 @@
 
 session_start();
 
-require ('./Model/Log.php');
+require ('./Model/Database.php');
 
 
 //Si Log 
 if (isset($_GET['actionlog'])){
-    if($_GET['actionlog']== 'signin'){
-        require('./Controller/Registration.php');
-        $registration = registration();
+    if($_GET['actionlog'] == 'login'){
+        require('./Controller/ControllerLog.php');
+        registration();
         //S'incrire sur la bdd
-        echo ('connecté');
+        echo ('Login');
         
     }
-    elseif($_GET['actionlog']== 'login'){
+    elseif($_GET['actionlog'] == 'signin'){
         if(isset($_POST['id']) && $_POST['id'] < 0 ){
-            require('./Controller/Registration.php');
-            $connect = connect();
+            require('./Controller/ControllerLog.php');
+            connect();
            //Se connecter
-           echo ('');
+           echo ('Signin');
            
         }
         else{
             echo "Erreur: pas d'identifiant reconnu";
+            //header ('Location:./View/IndexView.php');
         }
     }
 }
 else{
-    require ('./View/IndexView.php');
+    //require ('./View/IndexView.php');
     echo "Pas d'action";
 }
 //Si comment
