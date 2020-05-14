@@ -13,9 +13,8 @@
         </label>
         <p>Mot de passe oublié ?</p>
 
-        <a href="../index.php?actionlog=signin">
         <input type="submit" name="submit" value="Se connecter" class="button"> 
-        </a>
+        
     </form>
 
 
@@ -32,10 +31,10 @@
         <label for="pass_member">
             <input type="password" name="pass_member" class="mdp" placeholder="Mot de passe">
         </label>
-    </form>
-    <a href="../index.php?actionlog=login">
         <input type="submit" name="submit" value="S'inscrire" class="button" />
-    </a>
+        
+    </form>
+   
 
 <?php $content = ob_get_clean();?> 
 <?php require ('template.php');?>

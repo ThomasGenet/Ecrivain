@@ -14,6 +14,7 @@ if (isset($_GET['actionlog'])){
         registration();
         //S'incrire sur la bdd
         echo ('Login');
+        header('Location: ./View/ViewChapter.php');
         
     }
     elseif($_GET['actionlog'] == 'signin'){
@@ -22,11 +23,12 @@ if (isset($_GET['actionlog'])){
             connect();
            //Se connecter
            echo ('Signin');
+           header('Location: ./View/ViewLog.php');
            
         }
         else{
             echo "Erreur: pas d'identifiant reconnu";
-            //header ('Location:./View/IndexView.php');
+            header ('Location:./View/IndexView.php');
         }
     }
 }
@@ -39,6 +41,4 @@ else{
 
 //Envoi vers l'affichage des prochains commentaires
 
-//Require vers les bons controllers à faire !!!
-
-require ('./View/template.php'); //Futur template.php
+//require ('./View/IndexView.php'); //Retour à la page d'accueil

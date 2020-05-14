@@ -1,8 +1,20 @@
 <?php 
 
 function registration(){
-    include ('../Model/Database.php');
-    //echo ('registration');
+    
+    try
+    {
+            $bdd = new PDO('mysql:host=localhost;dbname=ecrivain;charset=utf8', 'root', 'root');
+            $bdd->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
+    }
+    
+    catch(Exception $e)
+    {
+            die('Erreur : '.$e->getMessage());
+    }
+    
+
+    echo ('registration');
 // Vérification de la validité des informations
 $pseudo = htmlspecialchars($_POST['pseudo_member']);
 $mail = htmlspecialchars($_POST['mail_member']);
@@ -17,10 +29,13 @@ $req->execute(array(
     'pseudo_member' => $pseudo,
     'pass_member' => $pass_hache,
     'mail_member' => $mail));
-    
+
+    echo ('enregistrer sur sql');
+
     if (isset($_SESSION['pseudo_member']))
         {
             echo 'Bonjour ' . $_SESSION['pseudo_member'] . 'ok';
+            header('Location: ../View/IndexView');
         }
         echo ('Inscrit');
     require ('../View/ViewLog.php');
