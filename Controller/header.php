@@ -7,4 +7,4 @@ else{
     //Si une personne est connecté alors on affiche le header avec le login
     require ('../View/_header');
 }
-
+//Mettre dans la view !!!!

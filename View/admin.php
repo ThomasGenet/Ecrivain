@@ -1,5 +1,6 @@
-
-    <!--Navigation-->
+<?php $title = 'Admin'; ?>    
+<?php ob_start();?>
+ <!--Navigation-->
     <nav>
         <h1> <a href="../index.html">Jean Forteroche</a> </h1>
         <ul>
@@ -20,7 +21,4 @@
         <h1>Mon tableau de bord</h1>
     </header>
     
-
-</body>
-
-</html>
+<?php $content = ob_get_clean() ?>

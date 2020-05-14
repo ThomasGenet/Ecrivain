@@ -1,4 +1,4 @@
- <?php $title = 'Accueil'; ?>    
+ <?php $title = 'Chapitre'; ?>    
  <?php ob_start();?>
      <div>
         <h1>Chapitre 1</h1>
@@ -26,4 +26,5 @@
 
     </section>
 <?php $content = ob_get_clean()?>
+<?php include ('./template.php'); ?>
 
