@@ -2,8 +2,21 @@
 require_once ('./Model/ModelLog.php');
 
 function registration(){
-    $req = registration();
-    require ('./View/ViewLog.php');
+    // Vérification de la validité des informations
+    $admin = 0;
+    $pseudo = htmlspecialchars($_POST['pseudo_member']);
+    // Hachage du mot de passe
+    $pass_hache = password_hash($_POST['pass_member'], PASSWORD_DEFAULT);
+    $mail = htmlspecialchars($_POST['mail_member']);
+    
+    $req = registration($admin, $pseudo, $pass_hache, $mail);
+    
+    if (isset($_SESSION['pseudo_member']))
+        {
+            echo 'Bonjour ' . $_SESSION['pseudo_member'] . 'ok';
+            header('Location: ../View/IndexView');
+        }
+    
 }
 
 function connect(){
