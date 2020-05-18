@@ -3,7 +3,7 @@
  <?php ob_start();?>
 <!--S'identifier-->
 <section id="log">
-    <form action="../index.php?actionlog=signin" method="POST" class="login">
+    <form action="../index.php?action=signin?&amp?nom=[pseudo_member]" method="POST" class="login">
         <h2>Connexion</h2>
         <label for="pseudo_member_signin">
             <input type="text" name="pseudo_member_login" class="pseudo" placeholder="Pseudo" />
@@ -20,7 +20,7 @@
 
 
     <!--S'enregistrer-->
-    <form action="../index.php?actionlog=login" method="POST" class="login">
+    <form action="../index.php?action=login" method="POST" class="login">
         <h2>Inscription</h2>
         <label for="pseudo_member">
             <input type="text" name="pseudo_member" class="pseudo" placeholder="Pseudo">

@@ -2,20 +2,20 @@
 require_once ('./Model/ModelLog.php');
 
 function registration(){
+
+    
     // Vérification de la validité des informations
     $admin = 0;
     $pseudo = htmlspecialchars($_POST['pseudo_member']);
     // Hachage du mot de passe
     $pass_hache = password_hash($_POST['pass_member'], PASSWORD_DEFAULT);
     $mail = htmlspecialchars($_POST['mail_member']);
+
+    $req = new FormLog;
+    $req -> registration($admin, $pseudo, $pass_hache, $mail);
     
-    $req = registration($admin, $pseudo, $pass_hache, $mail);
-    
-    if (isset($_SESSION['pseudo_member']))
-        {
-            echo 'Bonjour ' . $_SESSION['pseudo_member'] . 'ok';
-            header('Location: ../View/IndexView');
-        }
+    session_start();
+    header('Location: ../View/IndexView.php');
     
 }
 
@@ -23,7 +23,8 @@ function connect(){
     $pseudo_signin = htmlspecialchars($_POST['pseudo_member_signin']);
 
     // Comparaison du pass envoyé avec la base via le formulaire 
-    $request = connect($pseudo_signin);
+    $request = new FormLog;
+    $request -> connect($pseudo_signin);
 
         if (!$request)
         {

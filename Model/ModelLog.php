@@ -1,9 +1,10 @@
 <?php 
-require_once ('./Database.php');
+require ('Model/Database.php');
 
 class FormLog extends Database{
     public function registration($admin, $pseudo, $pass_hache, $mail){
-
+        
+        $bdd = $this -> bddconnect();
     // Insertion
         $req = $bdd->prepare('INSERT INTO membre(admin_member,pseudo_member, pass_member, mail_member, date_inscription) VALUES (:admin_member,:pseudo_member, :pass_member, :mail_member, CURDATE())');
         $req->execute(array(
@@ -16,7 +17,8 @@ class FormLog extends Database{
     }
     //Se connecter
     public function connect($pseudo_signin){
-        
+
+        $bdd = $this -> bddconnect();
         //  Récupération de l'utilisateur et de son pass hashé
         $request = $bdd->prepare('SELECT id_member, pass_member FROM membre WHERE pseudo_member = :pseudo_member');
         $request->execute(array(
