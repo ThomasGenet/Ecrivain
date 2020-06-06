@@ -24,11 +24,11 @@ function registration(){
 }
 
 function connect(){
-    $pseudo_signin = htmlspecialchars($_POST['mail_member_signin']);
+    $mail_signin = htmlspecialchars($_POST['mail_member_login']);
 
     // Comparaison du pass envoyé avec la base via le formulaire 
     $request = new UserManager;
-    $request -> connect($pseudo_signin);
+    $request -> connect($mail_signin);
 
         if (!$request)
         {
@@ -36,14 +36,14 @@ function connect(){
         }
         else
         {
-            $isPasswordCorrect = password_verify($_POST['pass_member_signin'], $request['pass_member']);
+            $isPasswordCorrect = password_verify($_POST['pass_member_login'], $request['pass_member']);
             if ($isPasswordCorrect) {
                 session_start();
                 $_SESSION['id_member'] = $request['id'];
                 $_SESSION['admin'] = $request['admin_member'];
                 $_SESSION['pseudo'] = $request['pseudo_member'];
                 header ('Location: http://localhost:8887/index.php');
-
+                exit();
             }
             else {
                 echo 'Mauvais identifiant ou mot de passe !';

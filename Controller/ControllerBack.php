@@ -8,5 +8,5 @@ function addChapter(){
     $contentChapter = htmlspecialchars($_POST['contentChapter']);
     $resultat = new ChapterManager;
     $resultat -> addChapter($titleChapter, $contentChapter);
-    echo 'addChapter';
+    
 }

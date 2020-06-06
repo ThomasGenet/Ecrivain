@@ -16,13 +16,13 @@ class UserManager extends Database{
 
     }
     //Se connecter
-    public function connect($pseudo_signin){
+    public function connect($mail_signin){
 
         $bdd = $this -> bddconnect();
         //  Récupération de l'utilisateur et de son pass hashé
         $request = $bdd->prepare('SELECT id_member, pass_member FROM membre WHERE pseudo_member = :pseudo_member');
         $request->execute(array(
-            'pseudo_member' => $pseudo_signin));
+            'pseudo_member' => $mail_signin));
         $resultat = $request->fetch();
         return $resultat;
         

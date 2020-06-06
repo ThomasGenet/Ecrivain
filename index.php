@@ -12,7 +12,7 @@ try{
             registration();
         }
         elseif($_GET['action'] == 'signin'){
-            if(isset($_POST['id'] ) && $_POST['id'] < 0 ){
+            if(isset($_GET['id'])){
                 //Se connecter
                 connect();
             }
