@@ -8,39 +8,14 @@
 </header>
 <!--Extrait des chapitres-->
 <section id="chapitre">
-    <figure class="chap">
+    <?php foreach($chapitres as $chapitre): ?>
+    <article class="chap">
         <h1>Chapitre 1</h1>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores beatae hic possimus deleniti odit
-            quod ipsum, sunt numquam ratione aspernatur architecto at magnam impedit quis eaque fuga velit quasi
-            voluptas?
+            <?= $chapitre= ['chapter_content']?>
         </p>
-    </figure>
-    <figure class="chap">
-        <h1>Chapitre 2</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores beatae hic possimus deleniti odit
-            quod ipsum, sunt numquam ratione aspernatur architecto at magnam impedit quis eaque fuga velit quasi
-            voluptas?
-        </p>
-    </figure>
-    <figure class="chap">
-        <h1>Chapitre 3</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores beatae hic possimus deleniti odit
-            quod ipsum, sunt numquam ratione aspernatur architecto at magnam impedit quis eaque fuga velit quasi
-            voluptas?
-        </p>
-    </figure>
-    <figure class="chap">
-        <h1>Chapitre 4</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores beatae hic possimus deleniti odit
-            quod ipsum, sunt numquam ratione aspernatur architecto at magnam impedit quis eaque fuga velit quasi
-            voluptas?
-        </p>
-    </figure>
-
+    </article>
+    <?php endforeach ?>
 
 </section>
 <?php $content = ob_get_clean()?>

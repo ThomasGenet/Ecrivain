@@ -18,14 +18,27 @@
             <li> <a href="../index.php">Accueil</a> </li>
             <li>L'auteur</li>
             
+            <li>
+                <a href="../index.php?action=FormLog">
+                    <img src="../Public/fonts/fontawesome-free-5.13.0-desktop/svgs/solid/sign-in-alt.svg" alt="icon log"
+                        id="iconlog">
+                </a>
+                <a href="../index.php?action=FormLog" id="login">Log-in</a>
+            </li>
 
-            <li> <a href="../index.php?action=listChapter">Chapitres</a> </li>
+            <li>
+                <div id="decon">
+                    <a href="./pagelogin.php">
+                        <img src="../Public/fonts/fontawesome-free-5.13.0-desktop/svgs/solid/power-off.svg" alt="icon log"
+                            id="iconlog">
+                    </a>
+                    <a href="./pagelogin.php" id="login">Déconnexion</a>
+                </div>
+            </li>
+        <li><a href="./View/ViewAdmin.php">Edition</a></li>
         </ul>
-        <a href="../index.php?action=FormLog">
-            <img src="../Public/fonts/fontawesome-free-5.13.0-desktop/svgs/solid/sign-in-alt.svg" alt="icon log"
-                id="iconlog">
-        </a>
-        <a href="../index.php?action=FormLog" id="login">Log-in</a>
+
+
     </nav>
 
 

@@ -1,5 +1,6 @@
 <?php 
-require_once ('./Model/ModelLog.php');
+require_once ('./Model/UserManager.php');
+require_once ('./Model/ModelManager.php');
 
 function registration(){
 
@@ -11,7 +12,7 @@ function registration(){
     $pass_hache = password_hash($_POST['pass_member'], PASSWORD_DEFAULT);
     $mail = htmlspecialchars($_POST['mail_member']);
 
-    $req = new FormLog;
+    $req = new UserManager;
     $req -> registration($admin, $pseudo, $pass_hache, $mail);
     
     session_start();
@@ -20,10 +21,10 @@ function registration(){
 }
 
 function connect(){
-    $pseudo_signin = htmlspecialchars($_POST['pseudo_member_signin']);
+    $pseudo_signin = htmlspecialchars($_POST['mail_member_signin']);
 
     // Comparaison du pass envoyé avec la base via le formulaire 
-    $request = new FormLog;
+    $request = new UserManager;
     $request -> connect($pseudo_signin);
 
         if (!$request)
@@ -52,6 +53,12 @@ function connect(){
 }
 function FormPage(){
     require ('./View/ViewLog.php');
+}
+function getChapter(){
+    
+}
+function addComment(){
+
 }
 function ListChapter(){
     $title = ' ';

@@ -3,10 +3,10 @@
  <?php ob_start();?>
 <!--S'identifier-->
 <section id="log">
-    <form action="../index.php?action=signin?&amp?nom=[pseudo_member]" method="POST" class="login">
+    <form action="../index.php?action=signin?id" method="POST" class="login">
         <h2>Connexion</h2>
-        <label for="pseudo_member_signin">
-            <input type="text" name="pseudo_member_login" class="pseudo" placeholder="Pseudo" />
+        <label for="mail_member_signin">
+            <input type="text" name="mail_member_login" class="mail" placeholder="Mail" />
         </label>
         <label for="pass_member_signin">
             <input type="password" name="pass_member_login" class="mdp" placeholder="Mot de passe" />

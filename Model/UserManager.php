@@ -1,7 +1,7 @@
 <?php 
 require ('Model/Database.php');
 
-class FormLog extends Database{
+class UserManager extends Database{
     public function registration($admin, $pseudo, $pass_hache, $mail){
         
         $bdd = $this -> bddconnect();
@@ -40,10 +40,5 @@ class FormLog extends Database{
        setcookie('pass_hache', '');
                                    
     }
-    public function listChapter(){
-        //Faire function liste des chapitres
-    }
-    public function listComment(){
-        //Faire function liste des commentires
-    }
+    
 }
