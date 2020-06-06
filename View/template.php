@@ -17,15 +17,11 @@
         <ul>
             <li> <a href="../index.php">Accueil</a> </li>
             <li>L'auteur</li>
-            
-            <li>
-                <a href="../index.php?action=FormLog">
-                    <img src="../Public/fonts/fontawesome-free-5.13.0-desktop/svgs/solid/sign-in-alt.svg" alt="icon log"
-                        id="iconlog">
-                </a>
-                <a href="../index.php?action=FormLog" id="login">Log-in</a>
-            </li>
-
+           
+            <?php 
+            if(isset($_SESSION)){
+                if($_SESSION['id_member']){
+            ?>
             <li>
                 <div id="decon">
                     <a href="./pagelogin.php">
@@ -35,6 +31,20 @@
                     <a href="./pagelogin.php" id="login">Déconnexion</a>
                 </div>
             </li>
+            <?php
+                }
+            }else{
+                ?>
+            <li>
+                <a href="../index.php?action=FormLog">
+                    <img src="../Public/fonts/fontawesome-free-5.13.0-desktop/svgs/solid/sign-in-alt.svg" alt="icon log"
+                        id="iconlog">
+                </a>
+                <a href="../index.php?action=FormLog" id="login">Log-in</a>
+            </li>
+            <?php
+            }
+            ?>
         <li><a href="./View/ViewAdmin.php">Edition</a></li>
         </ul>
 

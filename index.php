@@ -20,6 +20,9 @@ try{
                 echo "Erreur: pas d'identifiant reconnu";
             }
         }
+        elseif($_GET['action']== 'addChapter'){
+            addChapter();
+        }
         elseif($_GET['action']== 'getChapter'){
             if(isset($_GET['id'])){
                 getChapter($_GET['id']);

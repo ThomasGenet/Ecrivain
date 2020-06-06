@@ -12,11 +12,11 @@
     </section>
     <!--Ajouter un commentaire-->
     <section id="message">
-        <div class="com">
+        <form class="com" action="../index.php?action=addComment&id=<?=$_GET['id']?>" method="POST">
             <h2>Commentaire</h2>
             <textarea name="subject" placeholder="Rédiger un comentaire"> </textarea>
             <input type="submit" value="Soumettre le commentaire">
-        </div>
+        </form>
     </section>
     <!--Commentaires liste-->
     <section id="commentaires">

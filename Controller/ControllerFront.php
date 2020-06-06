@@ -1,6 +1,8 @@
 <?php 
 require_once ('./Model/UserManager.php');
-require_once ('./Model/ModelManager.php');
+require_once ('./Model/ChapterManager.php');
+require_once ('./Model/CommentManager.php');
+
 
 function registration(){
 
@@ -16,6 +18,7 @@ function registration(){
     $req -> registration($admin, $pseudo, $pass_hache, $mail);
     
     session_start();
+    //Mettre un lien header location
     header('Location: ../View/IndexView.php');
     
 }
@@ -39,7 +42,7 @@ function connect(){
                 $_SESSION['id_member'] = $request['id'];
                 $_SESSION['admin'] = $request['admin_member'];
                 $_SESSION['pseudo'] = $request['pseudo_member'];
-                header ('Location: ./index.php');
+                header ('Location: http://localhost:8887/index.php');
 
             }
             else {
@@ -51,20 +54,30 @@ function connect(){
     require ('./View/ViewLog.php');
     
 }
-function FormPage(){
-    require ('./View/ViewLog.php');
+function logout(){
+    $req = new UserManager;
+    $req -> logout();
 }
+
 function getChapter(){
     
 }
 function addComment(){
-
+    $comment = htmlspecialchars($_POST['comment']);
+    $id = $_GET['id'];
+    $resultat = new CommentManager;
+    $resultat -> addComment($comment, $id);
+    header ('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
+    exit();
 }
 function ListChapter(){
     $title = ' ';
     $content = ' ';
     require ('./View/template.php');
     //Faire la fonction liste des chapitres
+}
+function FormPage(){
+    require ('./View/ViewLog.php');
 }
 
 

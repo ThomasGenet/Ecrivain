@@ -229,7 +229,18 @@ input{
     height: 2em;
 }
 
-/*Page administration*/
+/*Page administration start*/
+#formChapter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+}
+#formChapter input, #formChapter textarea{
+    width: 100%;
+}
+/*Page administration end*/
 /*General*/
 body{
     background-color: #fff;
