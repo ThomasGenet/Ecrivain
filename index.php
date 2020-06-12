@@ -20,6 +20,9 @@ try{
                 echo "Erreur: pas d'identifiant reconnu";
             }
         }
+        elseif($_GET['action']== 'destroy'){
+            logout();
+        }
         elseif($_GET['action']== 'addChapter'){
             addChapter();
         }
@@ -47,7 +50,7 @@ try{
         ListChapter();
     }
 
-    }
+}
 catch(Exception $e){
         die(var_dump('Erreur : '.$e->getMessage()));
     }

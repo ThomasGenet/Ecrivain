@@ -20,9 +20,9 @@ class UserManager extends Database{
 
         $bdd = $this -> bddconnect();
         //  Récupération de l'utilisateur et de son pass hashé
-        $request = $bdd->prepare('SELECT id_member, pass_member FROM membre WHERE pseudo_member = :pseudo_member');
+        $request = $bdd->prepare('SELECT id, pseudo_member, admin_member, pass_member FROM membre WHERE mail_member = :mail_member');
         $request->execute(array(
-            'pseudo_member' => $mail_signin));
+            'mail_member' => $mail_signin));
         $resultat = $request->fetch();
         return $resultat;
         
@@ -30,7 +30,7 @@ class UserManager extends Database{
     
     public function logout(){
         //A finir !!!!!!!!!!! 
-       session_start();
+       
        // Suppression des variables de session et de la session
        $_SESSION = array();
        session_destroy();
@@ -38,6 +38,7 @@ class UserManager extends Database{
        // Suppression des cookies de connexion automatique
        setcookie('login', '');
        setcookie('pass_hache', '');
+       
                                    
     }
     

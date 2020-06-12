@@ -12,7 +12,7 @@
     <article class="chap">
         <h1>Chapitre 1</h1>
         <p>
-            <?= $chapitre= ['chapter_content']?>
+            <?= $chapitre ['chapter_content']?>
         </p>
     </article>
     <?php endforeach ?>

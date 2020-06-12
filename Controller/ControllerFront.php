@@ -25,23 +25,24 @@ function registration(){
 
 function connect(){
     $mail_signin = htmlspecialchars($_POST['mail_member_login']);
-
+    $pass_member = htmlspecialchars($_POST['pass_member_login']);
+    
+    
     // Comparaison du pass envoyé avec la base via le formulaire 
     $request = new UserManager;
-    $request -> connect($mail_signin);
-
-        if (!$request)
+    $infoUser = $request -> connect($mail_signin);
+    
+        if (!$infoUser)
         {
             echo 'Mauvais identifiant ou mot de passe !';
         }
         else
         {
-            $isPasswordCorrect = password_verify($_POST['pass_member_login'], $request['pass_member']);
-            if ($isPasswordCorrect) {
+            if (password_verify($pass_member, $infoUser['pass_member'])) {
                 session_start();
-                $_SESSION['id_member'] = $request['id'];
-                $_SESSION['admin'] = $request['admin_member'];
-                $_SESSION['pseudo'] = $request['pseudo_member'];
+                $_SESSION['id_member'] = $infoUser['id'];
+                $_SESSION['admin'] = $infoUser['admin_member'];
+                $_SESSION['pseudo'] = $infoUser['pseudo_member'];
                 header ('Location: http://localhost:8887/index.php');
                 exit();
             }
@@ -57,6 +58,8 @@ function connect(){
 function logout(){
     $req = new UserManager;
     $req -> logout();
+    header ('Location: http://localhost:8887/index.php');
+    exit();
 }
 
 function getChapter(){

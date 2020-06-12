@@ -16,25 +16,25 @@
         <h1> <a href="../index.php">Jean Forteroche</a> </h1>
         <ul>
             <li> <a href="../index.php">Accueil</a> </li>
-            <li>L'auteur</li>
-           
+            <li>Lauteur</li>
+
             <?php 
-            if(isset($_SESSION)){
-                if($_SESSION['id_member']){
-            ?>
+            if (isset($_SESSION)) {
+                
+                if (isset($_SESSION['id_member'])) {
+                    ?>
             <li>
                 <div id="decon">
-                    <a href="./pagelogin.php">
-                        <img src="../Public/fonts/fontawesome-free-5.13.0-desktop/svgs/solid/power-off.svg" alt="icon log"
-                            id="iconlog">
+                    <a href="../index.php?action=destroy">
+                        <img src="../Public/fonts/fontawesome-free-5.13.0-desktop/svgs/solid/power-off.svg"
+                            alt="icon log" id="iconlog">
                     </a>
-                    <a href="./pagelogin.php" id="login">Déconnexion</a>
+                    <a href="../index.php?action=destroy" id="login">Déconnexion</a>
                 </div>
             </li>
             <?php
-                }
-            }else{
-                ?>
+                } else {
+                    ?>
             <li>
                 <a href="../index.php?action=FormLog">
                     <img src="../Public/fonts/fontawesome-free-5.13.0-desktop/svgs/solid/sign-in-alt.svg" alt="icon log"
@@ -43,9 +43,16 @@
                 <a href="../index.php?action=FormLog" id="login">Log-in</a>
             </li>
             <?php
+                }
+                if (isset($_SESSION['admin'])) {
+                    if ($_SESSION['admin']== 1) {
+                        ?>
+            <li><a href="./View/ViewAdmin.php">Edition</a></li>
+            <?php
+                    }
+                }
             }
             ?>
-        <li><a href="./View/ViewAdmin.php">Edition</a></li>
         </ul>
 
 

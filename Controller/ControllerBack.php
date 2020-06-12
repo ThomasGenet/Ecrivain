@@ -7,6 +7,5 @@ function addChapter(){
     $titleChapter = htmlspecialchars($_POST['titleChapter']);
     $contentChapter = htmlspecialchars($_POST['contentChapter']);
     $resultat = new ChapterManager;
-    $resultat -> addChapter($titleChapter, $contentChapter);
-    
+    $infoNewChapter = $resultat -> addChapter($titleChapter, $contentChapter);
 }
