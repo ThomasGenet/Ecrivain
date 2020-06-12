@@ -47,7 +47,7 @@ try{
         }
     }
     else{
-        ListChapter();
+        listChapter();
     }
 
 }

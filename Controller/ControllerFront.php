@@ -62,8 +62,17 @@ function logout(){
     exit();
 }
 
-function getChapter(){
+function listChapter(){
+    $req = new ChapterManager;
+    $chapitres = $req -> listChapter();
+    require ('./View/IndexView.php');
+}
+function getChapter($id){
+    $req = new ChapterManager;
+    $chapters = $req -> getChapter($id);
     
+    require ('./View/ViewChapter.php');
+   
 }
 function addComment(){
     $comment = htmlspecialchars($_POST['comment']);
@@ -73,12 +82,7 @@ function addComment(){
     header ('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
     exit();
 }
-function ListChapter(){
-    $title = ' ';
-    $content = ' ';
-    require ('./View/template.php');
-    //Faire la fonction liste des chapitres
-}
+
 function FormPage(){
     require ('./View/ViewLog.php');
 }

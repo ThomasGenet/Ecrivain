@@ -37,6 +37,9 @@ nav li{
     list-style: none;
     font-size: 20px;
     padding: 0 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 nav li a {
     text-decoration: none;
@@ -49,7 +52,7 @@ nav li a:hover{
 #iconlog{
     width: 1em;
     margin-right: 1em;
-    margin-top: 1em;
+    
 }
 #iconlog:hover{
     color: #fff;
@@ -94,6 +97,15 @@ header img{
     display: flex;
     justify-content: center;
     padding: 0.2em;
+}
+#titleChapter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin: 1em auto;
+    border: 1px solid #A7B3A1;
+    width: 10%;
 }
 /*Page du chapitre & les commentaires*/
 /*Page chapitre*/

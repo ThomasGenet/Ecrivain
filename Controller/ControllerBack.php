@@ -8,4 +8,6 @@ function addChapter(){
     $contentChapter = htmlspecialchars($_POST['contentChapter']);
     $resultat = new ChapterManager;
     $infoNewChapter = $resultat -> addChapter($titleChapter, $contentChapter);
+    header('Location: http://localhost:8887/index.php');
+    exit();
 }

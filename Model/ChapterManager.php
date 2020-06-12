@@ -11,8 +11,17 @@ class ChapterManager extends Database{
         return $req;
     }
     public function listChapter(){
-
-        //Faire function liste des chapitres
+        $bdd = $this -> bddconnect();
+        // Insertion
+        $req = $bdd->query('SELECT * FROM chapter ORDER BY id asc');
+        return $req;
+    }
+    public function getChapter($id){
+        $bdd = $this -> bddconnect();
+        $req = $bdd->prepare('SELECT * FROM chapter WHERE id = :id');
+        $req->execute(array(
+            'id'=> $id));
+        return $req;
     }
     
 }

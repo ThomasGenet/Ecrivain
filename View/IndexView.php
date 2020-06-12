@@ -9,14 +9,16 @@
 <!--Extrait des chapitres-->
 <section id="chapitre">
     <?php foreach($chapitres as $chapitre): ?>
+    
     <article class="chap">
-        <h1>Chapitre 1</h1>
-        <p>
-            <?= $chapitre ['chapter_content']?>
-        </p>
+    <a href="index.php?action=getChapter&id=<?= $chapitre['id']?>">
+    
+        <h1><?= $chapitre ['title_chapter']?></h1>
+    </a>
     </article>
+    
     <?php endforeach ?>
 
 </section>
 <?php $content = ob_get_clean()?>
-<?php include('./template.php');?>
+<?php include('template.php');?>
