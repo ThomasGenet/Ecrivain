@@ -70,15 +70,18 @@ function listChapter(){
 function getChapter($id){
     $req = new ChapterManager;
     $chapters = $req -> getChapter($id);
-    
+    $request = new CommentManager;
+    $listComments = $request -> listComment($id);
+    //die(var_dump($id));
     require ('./View/ViewChapter.php');
    
 }
-function addComment(){
-    $comment = htmlspecialchars($_POST['comment']);
-    $id = $_GET['id'];
+function addComment($id){
+    $contentComment = htmlspecialchars($_POST['comment']);
+    $id_member = $_SESSION['id_member'];
     $resultat = new CommentManager;
-    $resultat -> addComment($comment, $id);
+    $commentreq = $resultat -> addComment($contentComment, $id, $id_member);
+    //die(var_dump($resultat));
     header ('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
     exit();
 }
