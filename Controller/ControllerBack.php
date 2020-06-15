@@ -11,3 +11,6 @@ function addChapter(){
     header('Location: http://localhost:8887/index.php');
     exit();
 }
+function updateChapter(){
+    
+}

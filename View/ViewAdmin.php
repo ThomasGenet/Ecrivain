@@ -9,7 +9,7 @@
 
     <form action="../index.php?action=addChapter" method="POST" id="formChapter">
         <input type="text" name="titleChapter" placeholder="Titre du Chapitre">
-        <textarea name="contentChapter" id="" cols="30" rows="10"></textarea>
+        <textarea id='tinyMCE' name="contentChapter" id="" cols="30" rows="10"></textarea>
         <input type="submit" id="addChapter">
     </form>
     

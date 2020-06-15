@@ -23,5 +23,8 @@ class ChapterManager extends Database{
             'id'=> $id));
         return $req;
     }
+    public function updateChapter(){
+        
+    }
     
 }

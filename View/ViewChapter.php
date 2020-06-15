@@ -1,6 +1,6 @@
  <?php $title = 'Chapitre'; ?>
  <?php ob_start();?>
- 
+
  <!--Chapitre entier-->
  <section id="chapter">
 
@@ -17,8 +17,9 @@
  <section id="message">
      <form class="com" action="../index.php?action=addComment&id=<?= $_GET['id']?>" method="POST">
          <h2>Commentaire</h2>
-        <textarea name="comment" placeholder="Rédiger un comentaire"></textarea>
-         <input type="submit" value="Soumettre le commentaire">
+        <textarea name="comment" placeholder="Rédiger un commentaire"></textarea>
+        <input type="submit" value="Soumettre le commentaire">
+
      </form>
  </section>
  <!--Commentaires liste-->
@@ -26,6 +27,7 @@
  <?php foreach($listComments as $listComment): ?> 
      <div id="excom">
          <p><?= $listComment['comment'] ?></p>
+         <span><a href="../index.php?action=report"></a></span>
      </div>
 <?php endforeach ?>
  </section>

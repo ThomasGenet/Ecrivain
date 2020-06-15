@@ -264,6 +264,9 @@ input{
 #formChapter input, #formChapter textarea{
     width: 100%;
 }
+.tox-tinymce{
+    width: 100%;
+}
 /*Page administration end*/
 /*General*/
 body{

@@ -81,7 +81,6 @@ function addComment($id){
     $id_member = $_SESSION['id_member'];
     $resultat = new CommentManager;
     $commentreq = $resultat -> addComment($contentComment, $id, $id_member);
-    //die(var_dump($resultat));
     header ('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
     exit();
 }

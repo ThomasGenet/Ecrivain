@@ -9,6 +9,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?= $title ;?> </title>
+    <script src="https://cdn.tiny.cloud/1/ze3sv9g6vjofffrg492wv8zh17as3c37b727diwq6ea0kszl/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#tinyMCE'
+        });
+    </script>
 </head>
 
 <body>
