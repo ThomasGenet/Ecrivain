@@ -1,6 +1,5 @@
-
- <?php $title = 'Log'; ?>    
- <?php ob_start();?>
+<?php $title = 'Log'; ?>
+<?php ob_start();?>
 <!--S'identifier-->
 <section id="log">
     <form action="/index.php?action=signin&id" method="POST" class="login">
@@ -13,8 +12,8 @@
         </label>
         <p>Mot de passe oublié ?</p>
 
-        <input type="submit" name="submit" value="Se connecter" class="button"> 
-        
+        <input type="submit" name="submit" value="Se connecter" class="button">
+
     </form>
 
 
@@ -32,9 +31,9 @@
             <input type="password" name="pass_member" class="mdp" placeholder="Mot de passe">
         </label>
         <input type="submit" name="submit" value="S'inscrire" class="button" />
-        
-    </form>
-   
 
-<?php $content = ob_get_clean();?> 
-<?php require ('template.php');?>
+    </form>
+
+
+    <?php $content = ob_get_clean();?>
+    <?php require ('template.php');?>

@@ -12,24 +12,27 @@
      </div>
      <?php endforeach ?>
  </section>
- 
+
  <!--Ajouter un commentaire-->
  <section id="message">
      <form class="com" action="../index.php?action=addComment&id=<?= $_GET['id']?>" method="POST">
          <h2>Commentaire</h2>
-        <textarea name="comment" placeholder="Rédiger un commentaire"></textarea>
-        <input type="submit" value="Soumettre le commentaire">
+         <textarea name="comment" placeholder="Rédiger un commentaire"></textarea>
+         <input type="submit" value="Soumettre le commentaire">
 
      </form>
  </section>
  <!--Commentaires liste-->
  <section id="commentaires">
- <?php foreach($listComments as $listComment): ?> 
+     <?php foreach($listComments as $listComment): ?>
      <div id="excom">
          <p><?= $listComment['comment'] ?></p>
-         <span><a href="../index.php?action=report"></a></span>
+         <a href="../index.php?action=report&idComment= <?= $listComment['id'] ?>">
+         
+         <img src="../Public/Img/attention.png"></img>
+         </a>
      </div>
-<?php endforeach ?>
+     <?php endforeach ?>
  </section>
  <?php $content = ob_get_clean()?>
  <?php include ('template.php'); ?>

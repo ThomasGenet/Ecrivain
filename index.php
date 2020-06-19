@@ -26,6 +26,12 @@ try{
         elseif($_GET['action']== 'addChapter'){
             addChapter();
         }
+        elseif ($_GET['action']== 'admin'){
+            admin();
+        }
+        elseif ($_GET['action']== 'updateChapter'){
+            updateChapter();
+        }
         elseif($_GET['action']== 'getChapter'){
             if(isset($_GET['id'])){
                 getChapter($_GET['id']);
@@ -41,7 +47,10 @@ try{
             else{
                 echo 'pas de commentaire';
             }
-        }
+        }/*
+        elseif ($_GET['action']=='report'){
+            report();
+        }*/
         elseif($_GET['action']== 'FormLog'){
             FormPage();
         }

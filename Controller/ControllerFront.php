@@ -67,12 +67,13 @@ function listChapter(){
     $chapitres = $req -> listChapter();
     require ('./View/IndexView.php');
 }
+//Afficher chapitre & list des commentaires
 function getChapter($id){
     $req = new ChapterManager;
     $chapters = $req -> getChapter($id);
     $request = new CommentManager;
     $listComments = $request -> listComment($id);
-    //die(var_dump($id));
+    
     require ('./View/ViewChapter.php');
    
 }
@@ -81,9 +82,14 @@ function addComment($id){
     $id_member = $_SESSION['id_member'];
     $resultat = new CommentManager;
     $commentreq = $resultat -> addComment($contentComment, $id, $id_member);
-    header ('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
+    //$_SESSION['id_comment'] = $commentreq['id'];
+    //die(var_dump($_SESSION['id_comment']));
+    header('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
     exit();
 }
+
+
+
 
 function FormPage(){
     require ('./View/ViewLog.php');

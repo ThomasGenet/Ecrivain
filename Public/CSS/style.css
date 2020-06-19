@@ -203,12 +203,16 @@ header p{
     margin: 0.5em auto;
     width: 80%;
     height: 2em;
-    justify-content: center;
+    display: flex;
+    justify-content: space-around;
 }
-#commentaires #excom p{
+#commentaires #excom p, #commentaires #excom span{
     padding: 0.5em;
 }
-
+#commentaires #excom img{
+    width: 1.5em;
+    height: 1.5em;
+}
 /*Page pour se log*/
 /*General*/
 body{

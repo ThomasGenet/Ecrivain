@@ -23,8 +23,11 @@ class ChapterManager extends Database{
             'id'=> $id));
         return $req;
     }
+    
     public function updateChapter(){
-        
+        $bdd = $this -> bddconnect();
+        $req = $bdd->prepare('UPDATE chapter(title_chapter, chapter_content) SET ');
     }
+    
     
 }

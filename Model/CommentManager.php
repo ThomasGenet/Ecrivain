@@ -15,9 +15,19 @@ class CommentManager extends Database{
     public function listComment($id){
         $bdd = $this -> bddconnect();
         // Insertion
-        $req = $bdd->prepare('SELECT * FROM comment WHERE id_chapter = :id');
+        $req = $bdd->prepare('SELECT * FROM comment WHERE id_chapter = :id_chapter');
         $req->execute(array(
-            'id'=> $id));
+            'id_chapter'=> $id));
+        return $req;
+    }
+    /*
+    public function report(){
+
+    }*/
+    public function listCommentReport(){
+        $bdd = $this -> bddconnect();
+        // Insertion
+        $req = $bdd->query('SELECT * FROM comment WHERE report_comment = 1');
         return $req;
     }
 }
