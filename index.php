@@ -47,10 +47,18 @@ try{
             else{
                 echo 'pas de commentaire';
             }
-        }/*
+        }
         elseif ($_GET['action']=='report'){
-            report();
-        }*/
+            if(isset($_GET['idComment'])){
+                
+                report($_GET['idComment']);
+                
+            }
+            else{
+                echo 'pas de signalement';
+            }
+            
+        }
         elseif($_GET['action']== 'FormLog'){
             FormPage();
         }

@@ -197,19 +197,19 @@ header p{
     height: auto;
     margin: 1em auto;
 }
-#commentaires #excom{
+.excom{
     border: 2px solid #A7B3A1;
     border-radius: 1em;
     margin: 0.5em auto;
     width: 80%;
-    height: 2em;
+    height: auto;
     display: flex;
     justify-content: space-around;
 }
-#commentaires #excom p, #commentaires #excom span{
+.excom p, .excom span, .excom a{
     padding: 0.5em;
 }
-#commentaires #excom img{
+.excom img{
     width: 1.5em;
     height: 1.5em;
 }
@@ -258,6 +258,18 @@ input{
 }
 
 /*Page administration start*/
+#admin{
+    display: flex;
+    flex-direction: row;
+}
+#listChapters, #listComments{
+    width: 50%;
+}
+#listChapters{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 #formChapter{
     display: flex;
     flex-direction: column;

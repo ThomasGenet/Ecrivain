@@ -30,7 +30,7 @@
     </div>
     <div id="listComments">
         <?php foreach($listComments as $listComment): ?>
-        <div id="excom">
+        <div class="excom">
             <p><?= $listComment['comment'] ?></p>
             <span><a href="../index.php?action=report"></a></span>
             <a href="">Retirer le signalement</a>

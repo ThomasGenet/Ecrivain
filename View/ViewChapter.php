@@ -25,12 +25,11 @@
  <!--Commentaires liste-->
  <section id="commentaires">
      <?php foreach($listComments as $listComment): ?>
-     <div id="excom">
+     <div class="excom">
          <p><?= $listComment['comment'] ?></p>
-         <a href="../index.php?action=report&idComment= <?= $listComment['id'] ?>">
-         
-         <img src="../Public/Img/attention.png"></img>
-         </a>
+         <form action="../index.php?action=report&idComment=<?= $listComment['id']?>" method="POST">
+         <input type="submit" value="Signaler le commentaire" >
+        </form>
      </div>
      <?php endforeach ?>
  </section>

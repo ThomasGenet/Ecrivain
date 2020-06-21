@@ -20,10 +20,15 @@ class CommentManager extends Database{
             'id_chapter'=> $id));
         return $req;
     }
-    /*
-    public function report(){
-
-    }*/
+    
+    public function report($id){
+        $bdd = $this -> bddconnect();
+        // Insertion
+        $req = $bdd->prepare('UPDATE comment SET report_comment= "1" WHERE id = :id');
+        $req->execute(array(
+            'id'=> $id));
+        return $req;
+    }
     public function listCommentReport(){
         $bdd = $this -> bddconnect();
         // Insertion
