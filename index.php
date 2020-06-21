@@ -52,12 +52,29 @@ try{
             if(isset($_GET['idComment'])){
                 
                 report($_GET['idComment']);
-                
             }
             else{
                 echo 'pas de signalement';
+            }  
+        }
+        elseif($_GET['action']=='removereport'){
+            if(isset($_GET['idReport'])){
+
+                removeReport($_GET['idReport']);
+            }
+            else{
+                echo 'Pas signalé';
             }
             
+        }
+        elseif ($_GET['action']=='deleteComment'){
+            if(isset($_GET['idDeleteComment'])){
+                
+                deleteComment($_GET['idDeleteComment']);
+            }
+            else{
+                echo 'Le commentaire ne peut pas être supprimé';
+            }  
         }
         elseif($_GET['action']== 'FormLog'){
             FormPage();

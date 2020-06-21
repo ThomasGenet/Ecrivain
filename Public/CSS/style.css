@@ -67,18 +67,7 @@ nav li a:hover{
 #login:hover{
     color: #fff;
 }
-/*Header*/
-header{
-    height: 23em;
-    margin: 2em;
-}
-header img{
-    width: 40%;
-    height: 60%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-}
+
 /*Chapitre*/
 #chapitre{
     display: flex;
@@ -126,6 +115,9 @@ header{
     margin: auto;
     width: 50%;
     height: auto;
+}
+header img{
+    width: 100%;
 }
 header h1{
     font-size: 40px;
@@ -264,6 +256,13 @@ input{
 }
 #listChapters, #listComments{
     width: 50%;
+    margin: 0 auto;
+}
+#listChapters h2, #listComments h2{
+    margin: 1em auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 #listChapters{
     display: flex;

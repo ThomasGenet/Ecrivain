@@ -23,7 +23,7 @@ class CommentManager extends Database{
     
     public function report($id){
         $bdd = $this -> bddconnect();
-        // Insertion
+       
         $req = $bdd->prepare('UPDATE comment SET report_comment= "1" WHERE id = :id');
         $req->execute(array(
             'id'=> $id));
@@ -31,8 +31,26 @@ class CommentManager extends Database{
     }
     public function listCommentReport(){
         $bdd = $this -> bddconnect();
-        // Insertion
+        
         $req = $bdd->query('SELECT * FROM comment WHERE report_comment = 1');
         return $req;
     }
+    public function removeReport($id){
+        $bdd = $this -> bddconnect();
+        
+        $req = $bdd->prepare('UPDATE comment SET report_comment= "0" WHERE id = :id');
+        $req->execute(array(
+            'id'=> $id));
+        return $req;
+    }
+    public function deleteComment($id){
+        $bdd = $this -> bddconnect();
+        
+        $req = $bdd->prepare('DELETE FROM comment WHERE id = :id');
+        $req->execute(array(
+            'id'=> $id));
+        return $req;
+    }
+
+    
 }

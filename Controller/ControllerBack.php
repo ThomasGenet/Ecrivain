@@ -18,7 +18,18 @@ function admin(){
     $request = new CommentManager;
     $listComments = $request -> listCommentReport();
     require ('./View/ViewAdmin.php');
-
+}
+function removeReport($id){
+    $req = new CommentManager;
+    $reportreq = $req -> removeReport($id);
+    header('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
+    exit();
+}
+function deleteComment($id){
+    $req = new CommentManager;
+    $deletereq = $req -> deleteComment($id);
+    header('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
+    exit();
 }
 
 function updateChapter(){

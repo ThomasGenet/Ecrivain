@@ -13,9 +13,9 @@
 </form>
 <section id="admin">
     <div id="listChapters">
-
+        <h2>Liste des chapitres </h2>
         <?php foreach($chapters as $chapter): ?>
-
+            
         <article class="chap">
             <a href="index.php?action=getChapter&id=<?= $chapter['id']?>">
 
@@ -29,12 +29,15 @@
 
     </div>
     <div id="listComments">
+    <h2>Liste des commentaires signalés</h2>
         <?php foreach($listComments as $listComment): ?>
+            
         <div class="excom">
+            
             <p><?= $listComment['comment'] ?></p>
-            <span><a href="../index.php?action=report"></a></span>
-            <a href="">Retirer le signalement</a>
-            <a href="">Supprimer</a>
+            
+            <a href="../index.php?action=removereport&idReport=<?= $listComment['id'] ?>">Retirer le signalement</a>
+            <a href="../index.php?action=deleteComment&idDeleteComment=<?= $listComment['id'] ?>">Supprimer</a>
         </div>
         <?php endforeach ?>
     </div>
