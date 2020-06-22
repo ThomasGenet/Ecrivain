@@ -31,10 +31,12 @@ function deleteComment($id){
     header('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
     exit();
 }
-
-function updateChapter(){
+function updateChapterView($id){
     $req = new ChapterManager;
-    $chapters = $req -> updateChapter();
+    $chaptersUpdate = $req -> updateChapterView($id);
+    
     require ('./View/ViewAdminUpdate.php');
 }
-
+function updateChapter($id){
+    require ('./View/ViewAdminUpdate.php');
+}

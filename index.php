@@ -29,8 +29,21 @@ try{
         elseif ($_GET['action']== 'admin'){
             admin();
         }
-        elseif ($_GET['action']== 'updateChapter'){
-            updateChapter();
+        elseif($_GET['action']=='updateChapterView'){
+            if(isset($_GET['idUpdate'])){
+                updateChapterView($_GET['idUpdate']);
+            }
+            else{
+                echo "Pas d'identifiant de chapitre à modifier";
+            }
+        }
+        elseif($_GET['action']== 'updateChapter'){
+            if(isset($_GET['idUpdateChapter'])){
+                updateChapter($_GET['idUpdateChapter']);
+            }
+            else{
+                echo "pas d'id";
+            }
         }
         elseif($_GET['action']== 'getChapter'){
             if(isset($_GET['id'])){
@@ -76,6 +89,7 @@ try{
                 echo 'Le commentaire ne peut pas être supprimé';
             }  
         }
+        
         elseif($_GET['action']== 'FormLog'){
             FormPage();
         }

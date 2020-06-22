@@ -6,16 +6,16 @@
     <h1>Mon tableau de bord</h1>
 </header>
 
-<form action="../index.php?action=updateChapter" method="POST" id="formChapter">
-    <?php  foreach($chapters as $chapter): ?>
+<form action="../index.php?action=updateChapter&idUpdateChapter=<?= $_GET['idUpdate'] ?>" method="POST" id="formChapter">
+    <?php  foreach($chaptersUpdate as $chapterUpdate): ?>
 
-    <input type="text" name="titleChapter" placeholder="<?=$chapter['title_chapter']?>">
+    <input type="text" name="titleChapter" placeholder="<?=$chapterUpdate['title_chapter']?>"> </input >
     <textarea id='tinyMCE' name="contentChapter" id="" cols="30" rows="10">
-        <?=$chapter['chapter_content']?>
+        <?=$chapterUpdate['chapter_content']?>
     </textarea>
-
+    <input type="submit" id="addChapter" value="Modifier">
     <?php endforeach;?>
-    <input type="submit" id="addChapter">
+    
 </form>
 
 <?php $content = ob_get_clean() ?>

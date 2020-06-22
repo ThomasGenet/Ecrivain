@@ -9,7 +9,7 @@
 <form action="../index.php?action=addChapter" method="POST" id="formChapter">
     <input type="text" name="titleChapter" placeholder="Titre du Chapitre">
     <textarea id='tinyMCE' name="contentChapter" id="" cols="30" rows="10"></textarea>
-    <input type="submit" id="addChapter">
+    <input type="submit" id="addChapter" value="Ajouter le chapitre">
 </form>
 <section id="admin">
     <div id="listChapters">
@@ -21,7 +21,7 @@
 
                 <h1><?= $chapter ['title_chapter']?></h1>
             </a>
-            <a href="">Modifier</a>
+            <a href="../index.php?action=updateChapterView&idUpdate=<?= $chapter['id']?>">Modifier</a>
             <a href="">Supprimer</a>
         </article>
 
