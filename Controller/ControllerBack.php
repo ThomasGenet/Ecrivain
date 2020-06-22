@@ -38,5 +38,7 @@ function updateChapterView($id){
     require ('./View/ViewAdminUpdate.php');
 }
 function updateChapter($id){
-    require ('./View/ViewAdminUpdate.php');
+    $req = new ChapterManager;
+    $chaptersUpdate = $req -> updateChapter($id);
+    require ('index.php');
 }
