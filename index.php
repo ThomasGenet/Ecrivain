@@ -34,20 +34,38 @@ try{
         }
         //Avoir la vue pour modifier le chapitre
         elseif($_GET['action']=='updateChapterView'){
+            if(isset($_SESSION['admin'])){
+                if($_SESSION['admin']== 1){
             if(isset($_GET['idUpdate'])){
                 updateChapterView($_GET['idUpdate']);
             }
             else{
                 echo "Pas d'identifiant de chapitre à modifier";
             }
+            }
+        }
         }
         //Modifier le chapitre
+
         elseif($_GET['action']== 'updateChapter'){
-            if(isset($_GET['idUpdateChapter'])){
-                updateChapter($_GET['idUpdateChapter']);
+            if(isset($_SESSION['admin'])){
+                if($_SESSION['admin']== 1){
+                    if(isset($_GET['idUpdateChapter'])){
+                        updateChapter($_GET['idUpdateChapter']);
+                    }
+                    else{
+                        echo "pas d'id";
+                    }
+                }
+            }
+            
+        }
+        elseif($_GET['action']== 'deleteChapter'){
+            if(isset($_GET['idDelete'])){
+                deleteChapter($_GET['idDelete']);
             }
             else{
-                echo "pas d'id";
+                echo "Pas d'id pour delete";
             }
         }
         //Voir un chapitre grâce à l'id

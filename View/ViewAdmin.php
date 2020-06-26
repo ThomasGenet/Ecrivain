@@ -22,7 +22,7 @@
                 <h1><?= $chapter ['title_chapter']?></h1>
             </a>
             <a href="../index.php?action=updateChapterView&idUpdate=<?= $chapter['id']?>">Modifier</a>
-            <a href="">Supprimer</a>
+            <a href="../index.php?action=deleteChapter&idDelete=<?= $chapter['id']?>">Supprimer</a>
         </article>
 
         <?php endforeach ?>

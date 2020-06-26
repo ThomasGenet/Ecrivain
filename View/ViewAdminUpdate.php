@@ -9,7 +9,7 @@
 <form action="../index.php?action=updateChapter&idUpdateChapter=<?= $_GET['idUpdate'] ?>" method="POST" id="formChapter">
     <?php  foreach($chaptersUpdate as $chapterUpdate): ?>
 
-    <input type="text" name="titleChapter" placeholder="<?=$chapterUpdate['title_chapter']?>"> </input >
+    <input type="text" name="titleChapter" value="<?=$chapterUpdate['title_chapter']?>"> </input >
     <textarea id='tinyMCE' name="contentChapter" id="" cols="30" rows="10">
         <?=$chapterUpdate['chapter_content']?>
     </textarea>

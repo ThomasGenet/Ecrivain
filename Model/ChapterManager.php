@@ -30,9 +30,21 @@ class ChapterManager extends Database{
             'id'=> $id));
         return $req;
     }
-    public function updateChapter($id){
+    public function updateChapter($id, $titleChapter, $contentChapter){
         $bdd = $this -> bddconnect();
-        $req = $bdd->prepare('UPDATE chapter(title_chapter, chapter_content) SET ');
+        $req = $bdd->prepare('UPDATE chapter SET title_chapter = :title_chapter , chapter_content = :chapter_content WHERE id = :id');
+        $req->execute(array(
+            'id'=> $id,
+            'title_chapter' => $titleChapter,
+            'chapter_content' => $contentChapter));
+        return $req;
+    }
+    public function deleteChapter($id){
+        $bdd = $this -> bddconnect();
+        $req = $bdd->prepare('DELETE FROM chapter WHERE id = :id');
+        $req->execute(array(
+            'id' => $id));
+        return $req;
     }
     
     

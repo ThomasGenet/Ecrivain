@@ -22,13 +22,13 @@ function admin(){
 function removeReport($id){
     $req = new CommentManager;
     $reportreq = $req -> removeReport($id);
-    header('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
+    header('Location: http://localhost:8887/index.php?action=admin');
     exit();
 }
 function deleteComment($id){
     $req = new CommentManager;
     $deletereq = $req -> deleteComment($id);
-    header('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
+    header('Location: http://localhost:8887/index.php?action=admin');
     exit();
 }
 function updateChapterView($id){
@@ -38,7 +38,16 @@ function updateChapterView($id){
     require ('./View/ViewAdminUpdate.php');
 }
 function updateChapter($id){
+    $titleChapter = htmlspecialchars($_POST['titleChapter']);
+    $contentChapter = ($_POST['contentChapter']);
     $req = new ChapterManager;
-    $chaptersUpdate = $req -> updateChapter($id);
-    require ('index.php');
+    $chaptersUpdate = $req -> updateChapter($id, $titleChapter, $contentChapter);
+    header('Location: http://localhost:8887/index.php?action=admin');
+    exit();
+}
+function deleteChapter($id){
+    $req = new ChapterManager;
+    $deleteChapter = $req -> deleteChapter($id);
+    header('Location: http://localhost:8887/index.php?action=admin');
+    exit();
 }
