@@ -92,12 +92,13 @@ function report($id){
     exit();
 }
 
-
-
 function FormPage(){
     require ('./View/ViewLog.php');
 }
-
+function Error($e){
+    $msgErreur = $e->getMessage();
+    require ('./View/ViewError.php');
+}
 
 
 

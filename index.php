@@ -5,7 +5,6 @@ require('./Controller/ControllerFront.php');
 require('./Controller/ControllerBack.php');
 
 try{
-    //Si Log 
     if (isset($_GET['action'])){
         //S'incrire sur la bdd
         if($_GET['action'] == 'login'){
@@ -26,27 +25,40 @@ try{
         }
         //Ajouter un chapitre
         elseif($_GET['action']== 'addChapter'){
-            addChapter();
+            if(isset($_SESSION['admin'])){
+                if ($_SESSION['admin']== 1) {
+                    addChapter();
+                }
+            }
         }
         //Se connecter à la page administrateur
         elseif ($_GET['action']== 'admin'){
-            admin();
+            if(isset($_SESSION['admin'])){
+                if ($_SESSION['admin']== 1) {
+                    admin();
+                }
+            }
+            else{
+                throw new Exception("Pas connecté en tant qu'admin");
+            } 
         }
         //Avoir la vue pour modifier le chapitre
         elseif($_GET['action']=='updateChapterView'){
             if(isset($_SESSION['admin'])){
                 if($_SESSION['admin']== 1){
-            if(isset($_GET['idUpdate'])){
-                updateChapterView($_GET['idUpdate']);
+                    if(isset($_GET['idUpdate'])){
+                        updateChapterView($_GET['idUpdate']);
+                    }
+                    else{
+                        echo "Pas d'identifiant de chapitre à modifier";
+                    }
+                }
             }
             else{
-                echo "Pas d'identifiant de chapitre à modifier";
-            }
-            }
-        }
+                throw new Exception("Pas connecté en tant qu'admin");
+            } 
         }
         //Modifier le chapitre
-
         elseif($_GET['action']== 'updateChapter'){
             if(isset($_SESSION['admin'])){
                 if($_SESSION['admin']== 1){
@@ -60,12 +72,16 @@ try{
             }
             
         }
+        //Supprimer un chapitre
         elseif($_GET['action']== 'deleteChapter'){
-            if(isset($_GET['idDelete'])){
-                deleteChapter($_GET['idDelete']);
-            }
-            else{
-                echo "Pas d'id pour delete";
+            if (isset($_SESSION['admin'])) {
+                if ($_SESSION['admin']== 1) {
+                    if (isset($_GET['idDelete'])) {
+                        deleteChapter($_GET['idDelete']);
+                    } else {
+                        echo "Pas d'id pour delete";
+                    }
+                }
             }
         }
         //Voir un chapitre grâce à l'id
@@ -79,43 +95,58 @@ try{
         }
         //Ajouter un commentaire
         elseif($_GET['action']=='addComment'){
-            if(isset($_GET['id'])){
-                addComment($_GET['id']);
-            }
-            else{
-                echo 'pas de commentaire';
+            if(isset($_SESSION['id_member'])){
+                if ($_SESSION['id_member']> 1) {
+                    if (isset($_GET['id'])) {
+                        addComment($_GET['id']);
+                    } else {
+                        echo 'pas de commentaire';
+                    }
+                }
             }
         }
         //Signaler un commentaire
         elseif ($_GET['action']=='report'){
-            if(isset($_GET['idComment'])){
-                
-                report($_GET['idComment']);
-            }
-            else{
-                echo 'pas de signalement';
+            if (isset($_SESSION['id_member'])) {
+                if ($_SESSION['id_member']> 1) {
+                    if (isset($_GET['idComment'])) {
+                        report($_GET['idComment']);
+                    } else {
+                        echo 'pas de signalement';
+                    }
+                }
             }  
         }
         //Retirer le signalement d'un commentaire
         elseif($_GET['action']=='removereport'){
-            if(isset($_GET['idReport'])){
-
-                removeReport($_GET['idReport']);
+            if (isset($_SESSION['admin'])) {
+                if ($_SESSION['admin']== 1) {
+                    if (isset($_GET['idReport'])) {
+                        removeReport($_GET['idReport']);
+                    } else {
+                        echo 'Pas signalé';
+                    }
+                }
             }
             else{
-                echo 'Pas signalé';
-            }
+                throw new Exception("Pas connecté en tant qu'admin");
+            } 
             
         }
         //Supprimer un commentaire
         elseif ($_GET['action']=='deleteComment'){
-            if(isset($_GET['idDeleteComment'])){
-                
-                deleteComment($_GET['idDeleteComment']);
+            if (isset($_SESSION['admin'])) {
+                if ($_SESSION['admin']== 1) {
+                    if (isset($_GET['idDeleteComment'])) {
+                        deleteComment($_GET['idDeleteComment']);
+                    } else {
+                        echo 'Le commentaire ne peut pas être supprimé';
+                    }
+                }
             }
             else{
-                echo 'Le commentaire ne peut pas être supprimé';
-            }  
+                throw new Exception("Pas connecté");
+            } 
         }
         
         elseif($_GET['action']== 'FormLog'){
@@ -127,6 +158,6 @@ try{
     }
 
 }
-catch(Exception $e){
-        die(var_dump('Erreur : '.$e->getMessage()));
-    }
+catch (Exception $e) {
+    Error($e);
+  }
