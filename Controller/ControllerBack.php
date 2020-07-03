@@ -8,7 +8,7 @@ function addChapter(){
     $contentChapter = ($_POST['contentChapter']);
     $resultat = new ChapterManager;
     $infoNewChapter = $resultat -> addChapter($titleChapter, $contentChapter);
-    header('Location: http://localhost:8887/index.php');
+    header('Location:  index.php');
     exit();
 }
 
@@ -22,13 +22,13 @@ function admin(){
 function removeReport($id){
     $req = new CommentManager;
     $reportreq = $req -> removeReport($id);
-    header('Location: http://localhost:8887/index.php?action=admin');
+    header('Location:  index.php?action=admin');
     exit();
 }
 function deleteComment($id){
     $req = new CommentManager;
     $deletereq = $req -> deleteComment($id);
-    header('Location: http://localhost:8887/index.php?action=admin');
+    header('Location:  index.php?action=admin');
     exit();
 }
 function updateChapterView($id){
@@ -42,12 +42,12 @@ function updateChapter($id){
     $contentChapter = ($_POST['contentChapter']);
     $req = new ChapterManager;
     $chaptersUpdate = $req -> updateChapter($id, $titleChapter, $contentChapter);
-    header('Location: http://localhost:8887/index.php?action=admin');
+    header('Location:  index.php?action=admin');
     exit();
 }
 function deleteChapter($id){
     $req = new ChapterManager;
     $deleteChapter = $req -> deleteChapter($id);
-    header('Location: http://localhost:8887/index.php?action=admin');
+    header('Location:  index.php?action=admin');
     exit();
 }

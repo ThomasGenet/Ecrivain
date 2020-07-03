@@ -29,6 +29,12 @@ try{
                 if ($_SESSION['admin']== 1) {
                     addChapter();
                 }
+                else{
+                    throw new Exception("Pas connecté en tant qu'admin");
+                }
+            }
+            else{
+                throw new Exception("Pas connecté en tant qu'admin");
             }
         }
         //Se connecter à la page administrateur
@@ -36,6 +42,9 @@ try{
             if(isset($_SESSION['admin'])){
                 if ($_SESSION['admin']== 1) {
                     admin();
+                }
+                else{
+                    throw new Exception("Pas connecté en tant qu'admin");
                 }
             }
             else{
@@ -69,6 +78,12 @@ try{
                         echo "pas d'id";
                     }
                 }
+                else{
+                    throw new Exception("Pas connecté en tant qu'admin");
+                }
+            }
+            else{
+                throw new Exception("Pas connecté en tant qu'admin");
             }
             
         }
@@ -82,6 +97,12 @@ try{
                         echo "Pas d'id pour delete";
                     }
                 }
+                else{
+                    throw new Exception("Pas connecté en tant qu'admin");
+                }
+            }
+            else{
+                throw new Exception("Pas connecté en tant qu'admin");
             }
         }
         //Voir un chapitre grâce à l'id
@@ -127,6 +148,9 @@ try{
                         echo 'Pas signalé';
                     }
                 }
+                else{
+                    throw new Exception("Pas connecté en tant qu'admin");
+                }
             }
             else{
                 throw new Exception("Pas connecté en tant qu'admin");
@@ -142,6 +166,9 @@ try{
                     } else {
                         echo 'Le commentaire ne peut pas être supprimé';
                     }
+                }
+                else{
+                    throw new Exception("Pas connecté en tant qu'admin");
                 }
             }
             else{

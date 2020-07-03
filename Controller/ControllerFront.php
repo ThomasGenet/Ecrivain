@@ -6,7 +6,6 @@ require_once ('./Model/CommentManager.php');
 
 function registration(){
 
-    
     // Vérification de la validité des informations
     $admin = 0;
     $pseudo = htmlspecialchars($_POST['pseudo_member']);
@@ -17,9 +16,9 @@ function registration(){
     $req = new UserManager;
     $req -> registration($admin, $pseudo, $pass_hache, $mail);
     
-    session_start();
     //Mettre un lien header location
-    header('Location: ../View/IndexView.php');
+    header ('Location: index.php?action=FormLog');
+    exit();
     
 }
 
@@ -43,7 +42,7 @@ function connect(){
                 $_SESSION['id_member'] = $infoUser['id'];
                 $_SESSION['admin'] = $infoUser['admin_member'];
                 $_SESSION['pseudo'] = $infoUser['pseudo_member'];
-                header ('Location: http://localhost:8887/index.php');
+                header ('Location: index.php');
                 exit();
             }
             else {
@@ -58,7 +57,7 @@ function connect(){
 function logout(){
     $req = new UserManager;
     $req -> logout();
-    header ('Location: http://localhost:8887/index.php');
+    header ('Location: index.php');
     exit();
 }
 
@@ -82,13 +81,13 @@ function addComment($id){
     $id_member = $_SESSION['id_member'];
     $resultat = new CommentManager;
     $commentreq = $resultat -> addComment($contentComment, $id, $id_member);
-    header('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
+    header('Location: index.php?action=getChapter&id='. $id);
     exit();
 }
 function report($id){
     $req = new CommentManager;
     $reportreq = $req -> report($id);
-    header('Location: http://localhost:8887/index.php?action=getChapter&id='. $id);
+    header('Location: index.php?action=getChapter&id='. $id);
     exit();
 }
 

@@ -10,7 +10,7 @@
         <label for="pass_member_login">
             <input type="password" name="pass_member_login" class="mdp" placeholder="Mot de passe" />
         </label>
-        <p>Mot de passe oublié ?</p>
+        
 
         <input type="submit" name="submit" value="Se connecter" class="button">
 
@@ -34,6 +34,6 @@
 
     </form>
 
-
+</section>
     <?php $content = ob_get_clean();?>
     <?php require ('template.php');?>
