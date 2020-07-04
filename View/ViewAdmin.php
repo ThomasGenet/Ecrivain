@@ -16,7 +16,7 @@
         <h2>Liste des chapitres </h2>
         <?php foreach($chapters as $chapter): ?>
             
-        <article class="chap">
+        <article class="excom">
             <a href="index.php?action=getChapter&id=<?= $chapter['id']?>">
 
                 <h1><?= $chapter ['title_chapter']?></h1>

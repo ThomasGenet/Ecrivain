@@ -13,6 +13,7 @@
         referrerpolicy="origin"></script>
     <script>
         tinymce.init({
+            language : "fr_FR",
             selector: '#tinyMCE'
         });
     </script>
