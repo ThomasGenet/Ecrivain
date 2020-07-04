@@ -19,19 +19,20 @@
      <form class="com" action="../index.php?action=addComment&id=<?= $_GET['id']?>" method="POST">
          <h2>Commentaire</h2>
          <textarea name="comment" placeholder="Rédiger un commentaire"></textarea>
-         <input type="submit" value="Soumettre le commentaire">
+         <input type="submit" value="Soumettre le commentaire" class="input">
      </form>
  </section>
  <?php } ?>
  <!--Commentaires liste-->
  <section id="commentaires">
+     <h1>Liste des commentaires</h1>
      <?php foreach($listComments as $listComment): ?>
      <div class="excom">
          <p><?= $listComment['comment'] ?></p>
          <?php if(isset($_SESSION['id_member'])){ ?>
             <form action="../index.php?action=report&idComment=<?= $listComment['id']?>" method="POST">
-            <input type="submit" value="Signaler le commentaire" >
-        </form>
+                <input type="submit" value="Signaler le commentaire" class="input" >
+            </form>
         <?php } ?>
      </div>
      <?php endforeach ?>

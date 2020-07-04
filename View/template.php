@@ -13,7 +13,7 @@
         referrerpolicy="origin"></script>
     <script>
         tinymce.init({
-            language : "fr_FR",
+            language: "fr_FR",
             selector: '#tinyMCE'
         });
     </script>
@@ -21,10 +21,9 @@
 
 <body>
     <nav>
-        <h1> <a href="../index.php">Jean Forteroche</a> </h1>
+        <h2> <a href="../index.php">Jean Forteroche</a> </h2>
         <ul>
             <li> <a href="../index.php">Accueil</a> </li>
-            <li>L'auteur</li>
 
             <?php 
             if (isset($_SESSION)) {

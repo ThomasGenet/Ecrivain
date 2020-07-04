@@ -8,8 +8,8 @@
 
 <form action="../index.php?action=addChapter" method="POST" id="formChapter">
     <input type="text" name="titleChapter" placeholder="Titre du Chapitre">
-    <textarea id='tinyMCE' name="contentChapter" id="" cols="30" rows="10"></textarea>
-    <input type="submit" id="addChapter" value="Ajouter le chapitre">
+    <textarea id='tinyMCE' name="contentChapter"  cols="30" rows="10"></textarea>
+    <input type="submit" class="addChapter" value="Ajouter le chapitre">
 </form>
 <section id="admin">
     <div id="listChapters">
@@ -19,7 +19,7 @@
         <article class="excom">
             <a href="index.php?action=getChapter&id=<?= $chapter['id']?>">
 
-                <h1><?= $chapter ['title_chapter']?></h1>
+                <h3><?= $chapter ['title_chapter']?></h3>
             </a>
             <a href="../index.php?action=updateChapterView&idUpdate=<?= $chapter['id']?>">Modifier</a>
             <a href="../index.php?action=deleteChapter&idDelete=<?= $chapter['id']?>">Supprimer</a>
