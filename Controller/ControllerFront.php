@@ -12,13 +12,23 @@ function registration(){
     // Hachage du mot de passe
     $pass_hache = password_hash($_POST['pass_member'], PASSWORD_DEFAULT);
     $mail = htmlspecialchars($_POST['mail_member']);
+    $str = strlen($pass_hache);
 
-    $req = new UserManager;
-    $req -> registration($admin, $pseudo, $pass_hache, $mail);
+    if($str > 10){
+        $req = new UserManager;
+        $infoRegist = $req -> registration($admin, $pseudo, $pass_hache, $mail);
+        header ('Location: index.php?action=FormLog');
+        exit();
+    }
+    else{
+        throw new Exception("Votre mot de passe doit contenir au minimum 10 caractère.");
+        header ('Location: index.php?action=FormLog');
+        exit();
+    }
     
+
     //Mettre un lien header location
-    header ('Location: index.php?action=FormLog');
-    exit();
+    
     
 }
 
@@ -78,11 +88,20 @@ function getChapter($id){
 }
 function addComment($id){
     $contentComment = htmlspecialchars($_POST['comment']);
+    $str = strlen($contentComment);
     $id_member = $_SESSION['id_member'];
-    $resultat = new CommentManager;
-    $commentreq = $resultat -> addComment($contentComment, $id, $id_member);
-    header('Location: index.php?action=getChapter&id='. $id);
-    exit();
+    if($str > 10){
+        $resultat = new CommentManager;
+        $commentreq = $resultat -> addComment($contentComment, $id, $id_member);
+        header('Location: index.php?action=getChapter&id='. $id);
+        exit();
+    }
+    else{
+        throw new Exception("Un commentaire doit contenir au minimum 10 caractère.");
+        header('Location: index.php?action=getChapter&id='. $id);
+        exit();
+    }
+    
 }
 function report($id){
     $req = new CommentManager;

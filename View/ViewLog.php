@@ -11,8 +11,6 @@
 
     </form>
 
-
-
     <!--S'enregistrer-->
     <form action="/index.php?action=login" method="POST" class="login">
         <h2>Inscription</h2>
