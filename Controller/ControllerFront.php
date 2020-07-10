@@ -12,23 +12,41 @@ function registration(){
     // Hachage du mot de passe
     $pass_hache = password_hash($_POST['pass_member'], PASSWORD_DEFAULT);
     $mail = htmlspecialchars($_POST['mail_member']);
-    $str = strlen($pass_hache);
+    $str = strlen($_POST["pass_member"]);
 
-    if($str > 10){
-        $req = new UserManager;
-        $infoRegist = $req -> registration($admin, $pseudo, $pass_hache, $mail);
-        header ('Location: index.php?action=FormLog');
-        exit();
+    $req = new UserManager;
+    $pseudodouble = $req -> pseudodouble($pseudo);
+    $count = $pseudodouble -> rowCount();
+
+    $request = new UserManager;
+    $maildouble = $request -> maildouble($mail);
+    $countmail = $maildouble -> rowCount();
+    //Test pseudo déjà utilisé
+    //die(var_dump($count));
+    if(!$count > 0){
+        if(!$countmail > 0){
+            //Test mot de passe + de 10 caractère
+            if($str > 10){
+                $requ = new UserManager;
+                $infoRegist = $requ -> registration($admin, $pseudo, $pass_hache, $mail);
+                header ('Location: index.php?action=FormLog');
+                exit();
+            }
+            else{
+                throw new Exception("Votre mot de passe doit contenir au minimum 10 caractère.");
+                header ('Location: index.php?action=FormLog');
+                exit();
+            }
+        }
+        else{
+            throw new Exception("Votre mail est déjà utilisé.");
+        }
+        
     }
     else{
-        throw new Exception("Votre mot de passe doit contenir au minimum 10 caractère.");
-        header ('Location: index.php?action=FormLog');
-        exit();
+        throw new Exception("Votre pseudo est déjà utilisé.");
+        
     }
-    
-
-    //Mettre un lien header location
-    
     
 }
 

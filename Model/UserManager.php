@@ -15,6 +15,22 @@ class UserManager extends Database{
         return $req;
 
     }
+    public function pseudodouble($pseudo){
+        $bdd = $this -> bddconnect();
+        //Chercher si il y a un doublon
+        $request = $bdd->prepare('SELECT id FROM membre WHERE pseudo_member = :pseudo_member');
+        $request->execute(array(
+            'pseudo_member' => $pseudo));
+        return $request;
+    }
+    public function maildouble($mail){
+        $bdd = $this -> bddconnect();
+        //Chercher si il y a un doublon
+        $request = $bdd->prepare('SELECT id FROM membre WHERE mail_member = :mail_member');
+        $request->execute(array(
+            'mail_member' => $mail));
+        return $request;
+    }
     //Se connecter
     public function connect($mail_signin){
 
