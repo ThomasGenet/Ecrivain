@@ -13,7 +13,6 @@ class UserManager extends Database{
             'pass_member' => $pass_hache,
             'mail_member' => $mail));
         return $req;
-
     }
     public function pseudodouble($pseudo){
         $bdd = $this -> bddconnect();
